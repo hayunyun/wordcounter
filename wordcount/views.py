@@ -2,10 +2,10 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'djangoproject/index.html')
+    return render(request, 'index.html')
     
 def about(request):
-    return render(request, 'djangoproject/about.html')
+    return render(request, 'about.html')
     
 def result(request):
     text = request.GET['fulltext']
@@ -21,4 +21,4 @@ def result(request):
             word_dictionary[word]=1 
     
         
-    return render(request, 'djangoproject/result.html', {'full' : text, 'total_t' : len(text),'total_w' : len(words), 'dictionary' : word_dictionary.items()})
+    return render(request, 'result.html', {'full' : text, 'total_t' : len(text),'total_w' : len(words), 'dictionary' : word_dictionary.items()})
